@@ -1,0 +1,16 @@
+<html ng-app="mandelbrot">
+<head>
+  <title>Mandelbrot Set Explorer</title>
+</head>
+<body ng-controller="PanzoomController">
+  <h1>Mandelbrot Set</h1>
+  <panzoom config="config" model="model" style="width:900px; height: 600px">
+    <img src="render?width=900&amp;height=600&amp;zoom=2&amp;center=-0.5,-0.5&amp;colors=%23000000,%230000ff,%23ffffff&amp;repeatInterval=128"></img>
+  </panzoom>
+</body>
+<script src="js/jquery.js"></script>
+<script src="js/angular.js"></script>
+<script src="js/angular-ui.js"></script>
+<script src="js/components.js"></script>
+<script src="js/mandelbrot.js"></script>
+</html>

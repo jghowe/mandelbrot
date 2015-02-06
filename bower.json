@@ -1,0 +1,28 @@
+{
+  "name": "mandelbrot",
+  "version": "1.0.0",
+  "authors": [
+    "Jeff Howe <jeff.howe@ensequence.com>"
+  ],
+  "description": "An application that allows the user to explore the mandelbrot set",
+  "main": "index.html",
+  "license": "None",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.3.11",
+    "angular-resource": "~1.3.11",
+    "angular-spinner": "~0.6.1",
+    "angular-ui-bootstrap": "~0.12.0",
+    "angular-ui-router": "~0.2.13",
+    "bootstrap": "~3.3.2",
+    "jquery": "~2.1.3",
+    "angular-pan-zoom": "~1.0.5"
+  }
+}
