@@ -30,14 +30,14 @@ func main() {
     center := complexFromString(req.FormValue("center"))
     zoom, _ := strconv.ParseFloat(req.FormValue("zoom"), 64)
     colors := strings.Split(req.FormValue("colors"), ",")
-    repeat, _ := strconv.Atoi(query["repeatInterval"][0])
+    spacing, _ := strconv.Atoi(query["colorSpacing"][0])
 
     dimensions := image.Pt(width,height)
 
     centerX :=real(center)
     centerY := imag(center)
 
-    m := mandelbrot.Render(&dimensions, centerX, centerY, zoom, colors, repeat)
+    m := mandelbrot.Render(&dimensions, centerX, centerY, zoom, colors, spacing)
 
     header := w.Header()
 

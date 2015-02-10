@@ -45,7 +45,7 @@ module.exports = function(grunt) {
         options: {
           sourceMap: true
         },
-        src: ['bower_components/jquery/jquery.min.js'],
+        src: ['bower_components/jquery/dist/jquery.min.js'],
         dest: '<%= distdir %>/js/jquery.js'
       },
       angular: {
@@ -88,6 +88,14 @@ module.exports = function(grunt) {
           src: '*',
           expand: true,
           cwd: 'client/img'
+        }]
+      },
+      css: {
+        files: [{
+          dest: '<%= distdir %>/css/',
+          src: '*.css',
+          expand: true,
+          cwd: 'bower_components/angular-pan-zoom/release'
         }]
       },
       index: {
