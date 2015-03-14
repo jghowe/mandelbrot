@@ -15,6 +15,7 @@ To install, make sure your GOPATH and go workspace is setup correctly. Then run 
 
 ```bash
 go get github.com/jghowe/mandelbrot
+cd $GOPATH/src/github.com/jghowe/mandelbrot
 npm install
 ```
 
