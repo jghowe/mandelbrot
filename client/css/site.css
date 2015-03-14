@@ -1,0 +1,20 @@
+.panzoombox {
+    border: 4px solid gray;
+    text-align: center;
+    background: gray;
+}
+.panzoomwidget {
+    position: absolute;
+    left: 22px;
+    top: 10px;
+    z-index: 1;
+    line-height: 1;
+}
+#panzoom {
+    display: inline-block;
+    width: 900px;
+    height: 600px;
+}
+.panel {
+    text-align: center;
+}

@@ -1,25 +1,46 @@
 <html ng-app="mandelbrot">
 <head>
-  <title>Mandelbrot Set Explorer</title>
-  <link rel="stylesheet" href="css/panzoomwidget.css" />
+    <title>Mandelbrot Set Explorer</title>
+    <link rel="stylesheet" href="css/panzoomwidget.css"/>
+    <link rel="stylesheet" href="css/foundation.css"/>
+    <link rel="stylesheet" href="css/site.css"/>
 </head>
 <body ng-controller="PanzoomController">
-  <h1>Mandelbrot Set</h1><button ng-click="getPosition()">Render</button>
-  <div style="position:relative">
-    <panzoomwidget panzoom-id="PanZoom" style="position:absolute;top:10px;left:10px;z-index:1"></panzoomwidget>
-    <panzoom id="PanZoom" config="config" model="model" style="width:900px; height: 600px">
-      <img style="position: absolute" mb-load="onImgLoad($event)" ng-src="render?width={{ width }}&amp;height={{ height }}&amp;zoom={{ zoom }}&amp;center={{ centerX }},{{ centerY }}&amp;colors=%234B0082,%239F00FF,%230000FF,%231CAC78,%23FFFF00,%23FF7F00,%23FF0000,%23000000&amp;colorSpacing=128"></img>
-      <svg style="position: absolute" width="900px" height="600px">
-        <rect x="0" y="0" width="900" height="600" style="fill:none"></rect>
-      </svg>
-    </panzoom>
-  </div>
-  <div>
-    Position X: {{ centerX }}<br/>
-    Position Y: {{ centerY }}<br/>
-    Zoom: {{ zoom }}
-    Model: {{ model }}
-  </div>
+<nav class="top-bar" data-topbar role="navigation">
+    <ul class="title-area">
+        <li class="name">
+            <h1><a href="#">Mandelbrot Set</a></h1>
+        </li>
+    </ul>
+
+    <section class="top-bar-section">
+        <!-- Right Nav Section -->
+        <ul class="right">
+            <li class="active"><a href="#" ng-click="getPosition()">Render</a></li>
+        </ul>
+    </section>
+</nav>
+<div class="row">
+    <div class="large-12 columns">
+        <div class="panzoombox">
+            <panzoomwidget panzoom-id="panzoom"></panzoomwidget>
+            <panzoom id="panzoom" config="config" model="model" style="width:900px; height: 600px">
+                <img style="position: absolute; max-width: none;" mb-load="onImgLoad($event)"
+                     ng-src="render?width={{ width }}&amp;height={{ height }}&amp;zoom={{ zoom }}&amp;center={{ centerX }},{{ centerY }}&amp;colors=%234B0082,%239F00FF,%230000FF,%231CAC78,%23FFFF00,%23FF7F00,%23FF0000,%23000000&amp;colorSpacing=128"></img>
+                <svg style="position: absolute" width="900px" height="600px">
+                    <rect x="0" y="0" width="900" height="600" style="fill:none"></rect>
+                </svg>
+            </panzoom>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="large-12 columns">
+        <div class="panel">
+            ({{ centerX }}, {{ centerY }}) zoom: {{ zoom }}
+        </div>
+    </div>
+</div>
 </body>
 <script src="js/jquery.js"></script>
 <script src="js/angular.js"></script>
